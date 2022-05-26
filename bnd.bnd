@@ -1,0 +1,4 @@
+Sling-Bundle-Resources: /libs/sling/logtail-plugin/css, /libs/sling/logtail-plugin/js
+
+-includeresource:\
+    @org.apache.felix.utils-*.jar!/org/apache/felix/utils/json/JSONWriter.class
