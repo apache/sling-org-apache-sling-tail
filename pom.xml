@@ -26,7 +26,7 @@
     <parent>
         <groupId>org.apache.sling</groupId>
         <artifactId>sling-bundle-parent</artifactId>
-        <version>49</version>
+        <version>51</version>
     </parent>
 
     <artifactId>org.apache.sling.tail</artifactId>
@@ -59,12 +59,12 @@
         <!-- OSGi Libraries not included here -->
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>osgi.core</artifactId>
+            <artifactId>org.osgi.framework</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>osgi.cmpn</artifactId>
+            <artifactId>org.osgi.service.http</artifactId>
             <scope>provided</scope>
         </dependency>
 
