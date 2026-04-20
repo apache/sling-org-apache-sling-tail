@@ -23,8 +23,7 @@ import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.spi.ILoggingEvent;
 import ch.qos.logback.core.Appender;
 import ch.qos.logback.core.FileAppender;
-import org.apache.felix.scr.annotations.*;
-import org.apache.felix.scr.annotations.Properties;
+import org.osgi.service.component.annotations.Component;
 import org.apache.felix.utils.json.JSONWriter;
 import org.apache.felix.webconsole.AbstractWebConsolePlugin;
 import org.apache.felix.webconsole.WebConsoleConstants;
@@ -46,15 +45,15 @@ import java.util.*;
 /**
  *
  */
-@Component
-@Service(value = { Servlet.class })
-@Properties({
-        @Property(name=org.osgi.framework.Constants.SERVICE_DESCRIPTION,
-                value="Apache Sling Web Console Plugin to tail log(s) of this Sling instance"),
-        @Property(name= WebConsoleConstants.PLUGIN_LABEL, value=LogTailerWebConsolePlugin.LABEL),
-        @Property(name=WebConsoleConstants.PLUGIN_TITLE, value=LogTailerWebConsolePlugin.TITLE),
-        @Property(name="felix.webconsole.configprinter.modes", value={"always"})
-})
+@Component(
+    service = Servlet.class,
+    property = {
+        org.osgi.framework.Constants.SERVICE_DESCRIPTION + "=Apache Sling Web Console Plugin to tail log(s) of this Sling instance",
+        WebConsoleConstants.PLUGIN_LABEL + "=" + LogTailerWebConsolePlugin.LABEL,
+        WebConsoleConstants.PLUGIN_TITLE + "=" + LogTailerWebConsolePlugin.TITLE,
+        "felix.webconsole.configprinter.modes=always"
+    }
+)
 public class LogTailerWebConsolePlugin extends AbstractWebConsolePlugin {
     public static final String LABEL = "tail";
     public static final String TITLE = "Tail Logs";

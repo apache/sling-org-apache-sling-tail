@@ -26,7 +26,7 @@
     <parent>
         <groupId>org.apache.sling</groupId>
         <artifactId>sling</artifactId>
-        <version>30</version>
+        <version>31</version>
     </parent>
 
     <artifactId>org.apache.sling.tail</artifactId>
@@ -55,28 +55,10 @@
                     </instructions>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-scr-plugin</artifactId>
-                <extensions>true</extensions>
-                <executions>
-                    <execution>
-                        <id>generate-scr-descriptor</id>
-                        <goals>
-                            <goal>scr</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
 
     <dependencies>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.scr.annotations</artifactId>
-            <scope>provided</scope>
-        </dependency>
         <dependency>
             <groupId>biz.aQute.bnd</groupId>
             <artifactId>bnd</artifactId>
