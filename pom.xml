@@ -26,7 +26,7 @@
     <parent>
         <groupId>org.apache.sling</groupId>
         <artifactId>sling-bundle-parent</artifactId>
-        <version>43</version>
+        <version>44</version>
     </parent>
 
     <artifactId>org.apache.sling.tail</artifactId>
@@ -34,6 +34,7 @@
 
     <properties>
         <bnd.baseline.skip>true</bnd.baseline.skip>
+        <project.build.outputTimestamp>1</project.build.outputTimestamp>
     </properties>
 
     <name>Apache Sling Log Tail Implementation</name>
