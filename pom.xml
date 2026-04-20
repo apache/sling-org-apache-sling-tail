@@ -25,38 +25,22 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apache.sling</groupId>
-        <artifactId>sling</artifactId>
-        <version>34</version>
+        <artifactId>sling-bundle-parent</artifactId>
+        <version>35</version>
     </parent>
 
     <artifactId>org.apache.sling.tail</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>bundle</packaging>
+
+    <properties>
+        <bnd.baseline.skip>true</bnd.baseline.skip>
+    </properties>
 
     <name>Apache Sling Log Tail Implementation</name>
     <description>
         This bundle enables a web tail view of the system log files.
     </description>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Sling-Bundle-Resources>
-                            /libs/sling/logtail-plugin/css, /libs/sling/logtail-plugin/js
-                        </Sling-Bundle-Resources>
-                        <Embed-Dependency>
-                                org.apache.felix.utils;inline=org/apache/felix/utils/json/JSONWriter.class
-                        </Embed-Dependency>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <dependencies>
         <dependency>
